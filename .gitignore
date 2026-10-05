@@ -1,0 +1,7 @@
+target/
+.idea/
+*.iml
+.smarttomcat/
+.env
+.env.*
+!.env.example
