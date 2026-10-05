@@ -154,12 +154,16 @@ public class EmailService {
                                 )
                 );
 
-        // ==============================
-        // KIEM TRA KET QUA
-        // ==============================
+// ==============================
+// KIEM TRA KET QUA
+// ==============================
 
-        int status =
-                response.statusCode();
+        int status = response.statusCode();
+
+        System.out.println("========== BREVO RESPONSE ==========");
+        System.out.println("HTTP STATUS: " + status);
+        System.out.println("RESPONSE BODY: " + response.body());
+        System.out.println("====================================");
 
         if (status < 200 || status >= 300) {
 
@@ -170,11 +174,12 @@ public class EmailService {
                             + response.body()
             );
         }
-    }
 
-    // ==============================
-    // ESCAPE JSON
-    // ==============================
+    } // <-- THÊM DẤU } NÀY
+
+// ==============================
+// ESCAPE JSON
+// ==============================
 
     private String escapeJson(String value) {
 
@@ -188,4 +193,5 @@ public class EmailService {
                 .replace("\r", "")
                 .replace("\n", "\\n");
     }
-}
+
+} // đóng class EmailService}
